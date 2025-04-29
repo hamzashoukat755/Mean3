@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2025 at 03:14 PM
+-- Generation Time: Apr 29, 2025 at 08:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -56,22 +56,24 @@ CREATE TABLE `clients` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `logo_url` varchar(255) NOT NULL,
-  `website_url` varchar(255) NOT NULL DEFAULT 'https://www.mean3.com'
+  `website_url` varchar(255) NOT NULL DEFAULT 'https://www.mean3.com',
+  `description` text DEFAULT NULL,
+  `read_more` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `clients`
 --
 
-INSERT INTO `clients` (`id`, `name`, `logo_url`, `website_url`) VALUES
-(1, 'Habitt', 'assets/images/client1.png', 'https://habitt.com/'),
-(2, 'Tapal Group', 'assets/images/client2.jpg', 'https://tapaltea.com/'),
-(3, 'Ismail Industries', 'assets/images/client3.jpg', 'https://ismailindustries.com.pk/'),
-(4, 'Candyland', 'assets/images/client4.jpg', 'https://candyland.com.pk/'),
-(5, 'Laziza International', 'assets/images/client5.jpg', 'https://www.lazizafoods.com/'),
-(6, 'Vital Group', 'assets/images/client6.jpg', 'https://vitalshop.pk/'),
-(7, 'Cambridge', 'assets/images/client7.jpg', 'https://thecambridgeshop.com/'),
-(8, 'Zashko', 'assets/images/client8.jpg', 'https://zashko.com/');
+INSERT INTO `clients` (`id`, `name`, `logo_url`, `website_url`, `description`, `read_more`) VALUES
+(1, 'Habitt', 'assets/images/client1.png', 'https://habitt.com/', 'We at Maya\'s Closet are super happy with not only the end result but the whole process has been very smooth. Not once did we have to chase after the team, nothing was delayed. Everything happened on time, we were given updates through the whole process. The Mean3 team is super efficient, they know what they are doing and get things done right and on time. They were very patient with us throughout the design and redesign process, not once were we rushed and the best part has been that they have said yes to everything. Nothing is impossible for them. The Mean3 team worked very hard with our team after the launch to make sure everything was in order, I can’t speak highly enough of them and recommend that anyone looking for any kind of work hand it to them blindly.', 1),
+(2, 'Tapal Group', 'assets/images/client2.jpg', 'https://tapaltea.com/', 'We at Maya\'s Closet are super happy with not only the end result but the whole process has been very smooth. Not once did we have to chase after the team, nothing was delayed. Everything happened on time, we were given updates through the whole process. The Mean3 team is super efficient, they know what they are doing and get things done right and on time. They were very patient with us throughout the design and redesign process, not once were we rushed and the best part has been that they have said yes to everything. Nothing is impossible for them. The Mean3 team worked very hard with our team after the launch to make sure everything was in order, I can’t speak highly enough of them and recommend that anyone looking for any kind of work hand it to them blindly.', 1),
+(3, 'Ismail Industries', 'assets/images/client3.jpg', 'https://ismailindustries.com.pk/', NULL, 0),
+(4, 'Candyland', 'assets/images/client4.jpg', 'https://candyland.com.pk/', NULL, 0),
+(5, 'Laziza International', 'assets/images/client5.jpg', 'https://www.lazizafoods.com/', 'We at Maya\'s Closet are super happy with not only the end result but the whole process has been very smooth. Not once did we have to chase after the team, nothing was delayed. Everything happened on time, we were given updates through the whole process. The Mean3 team is super efficient, they know what they are doing and get things done right and on time. They were very patient with us throughout the design and redesign process, not once were we rushed and the best part has been that they have said yes to everything. Nothing is impossible for them. The Mean3 team worked very hard with our team after the launch to make sure everything was in order, I can’t speak highly enough of them and recommend that anyone looking for any kind of work hand it to them blindly.', 1),
+(6, 'Vital Group', 'assets/images/client6.jpg', 'https://vitalshop.pk/', NULL, 0),
+(7, 'Cambridge', 'assets/images/client7.jpg', 'https://thecambridgeshop.com/', 'We’ve been using Mean3 services for our website and we are fully satisfied with their service Not only was their initial service totally up to the standard but their back up after sales service is terrific as well', 1),
+(8, 'Zashko', 'assets/images/client8.jpg', 'https://zashko.com/', 'Zashko Films is an American film production and distribution company. It was founded in 2018 by Khawar Farooqi and is located in Texas, USA. Zashko Films is known best for being the producer of Na Band Na.', 1);
 
 -- --------------------------------------------------------
 
@@ -168,20 +170,24 @@ CREATE TABLE `videos` (
   `thumbnail_url` varchar(255) NOT NULL,
   `video_file_url` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `video_count` int(11) NOT NULL DEFAULT 0,
+  `section` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `videos`
 --
 
-INSERT INTO `videos` (`id`, `title`, `thumbnail_url`, `video_file_url`, `description`, `created_at`) VALUES
-(1, 'Introduction to MEAN3 Services', 'assets/images/intro-mean3.jpg', 'assets/videos/intro-mean3.mp4', 'This video introduces the core services offered by MEAN3, showcasing our expertise in web development, ecommerce solutions, and digital marketing. Learn how we help businesses grow globally.', '2025-04-23 15:02:42'),
-(2, 'Client Success Stories', 'assets/images/video2.jpg', 'assets/videos/video2.mp4', 'Hear from our satisfied clients as they share their success stories with MEAN3. Discover how our tailored solutions have driven their businesses to new heights.', '2025-04-23 15:02:42'),
-(3, 'Behind the Scenes at MEAN3', 'assets/images/video3.jpg', 'assets/videos/video3.mp4', 'Get a glimpse behind the scenes at MEAN3. See our team in action as we collaborate to deliver innovative solutions for our clients.', '2025-04-23 15:02:42'),
-(4, 'MEAN3 Web Development Tutorial', 'assets/images/video4.jpg', 'assets/videos/video4.mp4', 'A step-by-step tutorial on web development with MEAN3. Learn best practices and techniques to build modern, scalable web applications.', '2025-04-23 15:02:42'),
-(5, 'Ecommerce Solutions with MEAN3', 'assets/images/video5.jpg', 'assets/videos/video5.mp4', 'Explore how MEAN3 provides cutting-edge ecommerce solutions. From Shopify to WooCommerce, we help businesses create seamless online stores.', '2025-04-23 15:02:42'),
-(6, 'Digital Marketing Strategies by MEAN3', 'assets/images/video6.jpg', 'assets/videos/video6.mp4', 'Discover effective digital marketing strategies with MEAN3. This video covers SEO, social media marketing, and more to boost your online presence.', '2025-04-23 15:02:42');
+INSERT INTO `videos` (`id`, `title`, `thumbnail_url`, `video_file_url`, `description`, `created_at`, `video_count`, `section`) VALUES
+(1, 'Introduction to MEAN3 Services', 'assets/images/intro-mean3.jpg', 'assets/videos/intro-mean3.mp4', 'This video introduces the core services offered by MEAN3, showcasing our expertise in web development, ecommerce solutions, and digital marketing. Learn how we help businesses grow globally.', '2025-04-23 15:02:42', 1, 'right'),
+(2, 'Client Success Stories', 'assets/images/video2.jpg', 'assets/videos/video2.mp4', 'Hear from our satisfied clients as they share their success stories with MEAN3. Discover how our tailored solutions have driven their businesses to new heights.', '2025-04-23 15:02:42', 1, 'left'),
+(3, 'Behind the Scenes at MEAN3', 'assets/images/video3.jpg', 'assets/videos/video3.mp4', 'Get a glimpse behind the scenes at MEAN3. See our team in action as we collaborate to deliver innovative solutions for our clients.', '2025-04-23 15:02:42', 1, 'right'),
+(4, 'MEAN3 Web Development Tutorial', 'assets/images/video4.jpg', 'assets/videos/video4.mp4', 'A step-by-step tutorial on web development with MEAN3. Learn best practices and techniques to build modern, scalable web applications.', '2025-04-23 15:02:42', 1, 'left'),
+(5, 'Ecommerce Solutions with MEAN3', 'assets/images/video5.jpg', 'assets/videos/video5.mp4', 'Explore how MEAN3 provides cutting-edge ecommerce solutions. From Shopify to WooCommerce, we help businesses create seamless online stores.', '2025-04-23 15:02:42', 1, 'right'),
+(6, 'Digital Marketing Strategies by MEAN3', 'assets/images/video6.jpg', 'assets/videos/video6.mp4', 'Discover effective digital marketing strategies with MEAN3. This video covers SEO, social media marketing, and more to boost your online presence.', '2025-04-23 15:02:42', 1, 'left'),
+(7, 'Mean3 Testimonial for Money Back Guarantee', 'assets/images/video6.jpg', 'assets/images/video6.mp4', 'Mean3 is delighted to unveil testimonial from Shayan Khan (Producer), Kiran Malik (Actress), Faisal Qureshi (Director) and Mani (Actor) from Pakistan\'s biggest film \'Money Back Guarantee\'.', '2025-04-29 15:08:26', 1, 'right'),
+(9, 'Mean3 Testimonial for Money Back Guarantee', 'assets/images/angular-logo.jpg', 'assets/videos/intro-mean.mp4', 'We’ve been using Mean3 services for our website and we are fully satisfied with their service Not only was their initial service totally up to the standard but their back up after sales service is terrific as well', '2025-04-29 15:08:26', 1, 'left');
 
 --
 -- Indexes for dumped tables
@@ -261,7 +267,7 @@ ALTER TABLE `placeorder`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
