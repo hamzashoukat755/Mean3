@@ -1,0 +1,112 @@
+.reviews-section {
+    padding: 60px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/mountain.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+}
+
+.reviews-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+.reviews-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+.reviews-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.review {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.review p {
+    position: relative;
+}
+
+.review p::before {
+    content: '“';
+    font-size: 24px;
+    color: #c43737;
+    position: absolute;
+    left: -15px;
+    top: -5px;
+}
+
+.review p::after {
+    content: '”';
+    font-size: 24px;
+    color: #ff0000;
+}
+
+@media (max-width: 768px) {
+    .reviews-section {
+        padding: 40px 15px;
+    }
+
+    .reviews-section h2 {
+        font-size: 28px;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .review {
+        font-size: 14px;
+    }
+
+    .review p::before {
+        font-size: 20px;
+        left: -10px;
+        top: -5px;
+    }
+
+    .review p::after {
+        font-size: 20px;
+    }
+}

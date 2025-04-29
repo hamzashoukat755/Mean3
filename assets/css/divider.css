@@ -1,0 +1,159 @@
+.global-reach-section {
+    position: relative;
+    background: linear-gradient(to right, #4a4a4a 50%, #c43737 50%);
+    color: #fff;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.global-reach-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.global-reach-left,
+.global-reach-right {
+    flex: 1;
+    position: relative;
+}
+
+.global-reach-left h2,
+.global-reach-right h2 {
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.global-reach-left p,
+.global-reach-right p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.world-map {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    width: 80%;
+    height: auto;
+    z-index: 0;
+}
+
+.global-reach-left h2,
+.global-reach-left p {
+    position: relative;
+    z-index: 1;
+}
+
+.browser-graph {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    width: 50%;
+    height: auto;
+    z-index: 0;
+}
+
+.global-reach-right h2,
+.global-reach-right p {
+    position: relative;
+    z-index: 1;
+}
+
+.divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+.divider::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    clip-path: ellipse(80% 60% at 50% 100%);
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .global-reach-section {
+        padding: 60px 0;
+        background: #4a4a4a;
+    }
+
+    .global-reach-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 15px;
+    }
+
+    .global-reach-left,
+    .global-reach-right {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .global-reach-left h2,
+    .global-reach-right h2 {
+        font-size: 32px;
+    }
+
+    .global-reach-left p,
+    .global-reach-right p {
+        font-size: 14px;
+    }
+
+    .world-map,
+    .browser-graph {
+        width: 60%;
+    }
+
+    .global-reach-right {
+        background: #ff0000;
+        padding: 30px;
+        border-radius: 8px;
+    }
+
+    .divider {
+        height: 60px;
+    }
+
+    .divider::after {
+        top: -30px;
+        height: 60px;
+        clip-path: ellipse(90% 50% at 50% 100%);
+    }
+}

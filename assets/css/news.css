@@ -1,0 +1,119 @@
+.news-section {
+    padding: 60px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.news-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news-section p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.news-slider {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.news-cards {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.news-card {
+    flex: 0 0 33.33%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.news-card a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 15px 0;
+    line-height: 1.4;
+    text-align: left;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.news-card a:hover {
+    color: #ff0000;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .news-section {
+        padding: 40px 15px;
+    }
+
+    .news-section h2 {
+        font-size: 28px;
+    }
+
+    .news-section p {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .news-card {
+        flex: 0 0 100%;
+    }
+
+    .news-card img {
+        height: 150px;
+    }
+
+    .news-card a {
+        font-size: 14px;
+    }
+
+    .slider-controls button {
+        font-size: 20px;
+        padding: 8px;
+    }
+}

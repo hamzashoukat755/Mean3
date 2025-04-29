@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: transparent;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    transition: background-color 0.3s;
+}
+
+.navbar.scrolled {
+    background-color: #000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo span {
+    color: #ff0000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff0000;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-image: url('../images/mean3Main.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    z-index: 1;
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+.dropdown-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.dropdown-column {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+}
+
+.dropdown-column h4 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.dropdown-column ul {
+    list-style: none;
+}
+
+.dropdown-column ul li {
+    margin: 5px 0;
+}
+
+.dropdown-column ul li a {
+    font-size: 14px;
+    color: #333;
+}
+
+.dropdown-column ul li a:hover {
+    color: #ff0000;
+}
+
+.quote-btn {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.quote-btn:hover {
+    background-color: #cc0000;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header-section {
+    position: relative;
+    height: 500px;
+    background-image: url('../images/mean3Main.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    padding-left: 40px;
+    max-width: 50%;
+}
+
+.header-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    display: inline;
+}
+
+.header-content p {
+    font-size: 18px;
+    display: inline;
+    margin-left: 10px;
+}
+
+.header-content div {
+    margin-top: 20px;
+}
+
+.portfolio-btn {
+    background-color: #c43737;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.portfolio-btn:hover {
+    background-color: #cc0000;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #20b358;
+}
+
+/* Back-to-Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 90px; /* Positioned above the WhatsApp button */
+    right: 20px;
+    background-color: #c43737;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: none; /* Hidden initially, shown on scroll */
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.back-to-top-btn:hover {
+    background-color: #cc0000;
+}
+
+.back-to-top-btn.show {
+    display: flex; /* Show when scrolling down */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .nav-links li:hover .dropdown {
+        display: none;
+    }
+
+    .nav-links li.active .dropdown {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .quote-btn {
+        margin-top: 10px;
+    }
+
+    .header-content {
+        padding-left: 20px;
+        max-width: 100%;
+    }
+
+    .header-content h1 {
+        font-size: 32px;
+    }
+
+    .header-content p {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .back-to-top-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 70px;
+        right: 15px;
+    }
+}

@@ -1,0 +1,196 @@
+.footer-section {
+    padding: 60px 20px 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.footer-row {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+/* First Row: Office Locations */
+.offices-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.office {
+    flex: 1;
+    min-width: 250px;
+}
+
+.office h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.office .clock {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.office p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.office img {
+    width: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Second Row: Logo, Information, Services, Partners */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column.logo-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-column.logo-column img {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.footer-column.logo-column p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    color: #ff0000;
+}
+
+.footer-column.partners-column img {
+    width: 80px;
+    margin: 5px;
+}
+
+/* Copyright and Social Media Row */
+.copyright-row {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright-row p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff0000;
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 40px 15px 15px;
+    }
+
+    .offices-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .office h5 {
+        font-size: 14px;
+    }
+
+    .office .clock,
+    .office p {
+        font-size: 12px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-column {
+        min-width: 100%;
+    }
+
+    .footer-column.logo-column img {
+        width: 80px;
+    }
+
+    .footer-column.logo-column p {
+        font-size: 12px;
+    }
+
+    .footer-column h4 {
+        font-size: 16px;
+    }
+
+    .footer-column ul li a {
+        font-size: 12px;
+    }
+
+    .footer-column.partners-column img {
+        width: 60px;
+    }
+
+    .copyright-row p {
+        font-size: 12px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+}
