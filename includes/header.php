@@ -95,7 +95,7 @@
                         <div class="dropdown-column">
                             <ul>
                                 <li><a href="ourClient.php">Our Clients</a></li>
-                                <li><a href="#">Client Testimonial</a></li>
+                                <li><a href="clientTestimonialDetail.php">Client Testimonial</a></li>
                             </ul>
                         </div>
                     </div>
